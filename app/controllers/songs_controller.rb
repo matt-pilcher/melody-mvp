@@ -21,6 +21,20 @@ class SongsController < ApplicationController
     end
   end
 
+  def edit
+    @song = Song.find(params[:id])
+  end
+
+  def update
+    @song = Song.find(params[:id])
+    
+    if @song.update(song_params)
+      redirect_to @song
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private 
     def song_params
       params.require(:song).permit(:title, :lyrics)

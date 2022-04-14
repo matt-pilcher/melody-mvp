@@ -1,2 +1,6 @@
 <h1><%= @song.title %></h1>
 <p><%= @song.lyrics %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_song_path(@song) %> </li>
+</ul>
