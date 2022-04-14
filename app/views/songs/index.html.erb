@@ -3,9 +3,14 @@
 
 <ul>
 	<% @songs.each do |song| %>
-		<li><%= song.title %></li>
+		<li>
+			<!-- <a href="/songs/<%= song.id %>"><%= song.title %></a> -->
+			<%= link_to song.title, song %>
+		</li>
 	<% end %>
 </ul>
+
+<%= link_to "Add New Song", new_song_path %>
 
 
 
