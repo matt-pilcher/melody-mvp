@@ -3,4 +3,8 @@
 
 <ul>
   <li><%= link_to "Edit", edit_song_path(@song) %> </li>
+  <li>
+    <!-- <%= link_to "Delete", song_path(@song), data: { turbo_method: :DELETE, turbo_confirm: "Are you sure?" } %> -->
+    <%= button_to 'Delete', song_path(@song), method: :delete %>
+    </li>
 </ul>
