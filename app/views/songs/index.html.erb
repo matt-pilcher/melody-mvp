@@ -1,2 +1,11 @@
 <h1>Songs</h1>
 <p>A list of your current songs</p>
+
+<ul>
+	<% @songs.each do |song| %>
+		<li><%= song.title %></li>
+	<% end %>
+</ul>
+
+
+
