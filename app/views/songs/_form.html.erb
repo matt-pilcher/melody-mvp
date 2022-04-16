@@ -9,6 +9,15 @@
   </div>
 
   <div>
+    <%= form.label :artist_name %><br>
+    <%= form.text_field :artist_name %>
+
+    <%= song.errors.full_messages_for(:artist_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :song_link %><br>
     <%= form.text_field :song_link %>
 
