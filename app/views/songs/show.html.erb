@@ -1,5 +1,7 @@
 <section class="container">
   <h1><%= @song.title %></h1>
+  <%= render 'embed', song_link: @song_link %>
+
   <p><%= simple_format(@song.lyrics) %></p>
 
   <ul>
