@@ -1,16 +1,18 @@
-<h1>Songs</h1>
-<p>A list of your current songs</p>
+<section class="container">
+	<h1>Songs</h1>
+	<p>A list of your current songs</p>
 
-<ul>
-	<% @songs.each do |song| %>
-		<li>
-			<!-- <a href="/songs/<%= song.id %>"><%= song.title %></a> -->
-			<%= link_to song.title, song %>
-		</li>
-	<% end %>
-</ul>
+	<ul>
+		<% @songs.each do |song| %>
+			<li>
+				<!-- <a href="/songs/<%= song.id %>"><%= song.title %></a> -->
+				<%= link_to song.title, song %>
+			</li>
+		<% end %>
+	</ul>
 
-<%= link_to "Add New Song", new_song_path %>
+	<%= link_to "Add New Song", new_song_path %>
 
+</section>
 
 

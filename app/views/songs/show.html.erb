@@ -1,10 +1,12 @@
-<h1><%= @song.title %></h1>
-<p><%= simple_format(@song.lyrics) %></p>
+<section class="container">
+  <h1><%= @song.title %></h1>
+  <p><%= simple_format(@song.lyrics) %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_song_path(@song) %> </li>
-  <li>
-    <!-- <%= link_to "Delete", song_path(@song), data: { turbo_method: :DELETE, turbo_confirm: "Are you sure?" } %> -->
-    <%= button_to 'Delete', song_path(@song), method: :delete %>
-    </li>
-</ul>
+  <ul>
+    <li><%= link_to "Edit", edit_song_path(@song) %> </li>
+    <li>
+      <!-- <%= link_to "Delete", song_path(@song), data: { turbo_method: :DELETE, turbo_confirm: "Are you sure?" } %> -->
+      <%= button_to 'Delete', song_path(@song), method: :delete %>
+      </li>
+  </ul>
+</section>
