@@ -1,8 +1,36 @@
 <section class="container">
   <h1><%= @song.title %></h1>
   <%= render 'embed', song_link: @song_link %>
+  <div class="row">
+    <div class="col s8">
+      <h4>Your Progress</h4>
+      <%= form_with model: [ @song, @song.phrases.build ] do |form| %>
+        <p>
+          <%= form.label :sentence %><br>
+          <%= form.text_field :sentence %>
+        </p>
+    
+        <p>
+          <%= form.label :translation %><br>
+          <%= form.text_field :translation %>
+        </p>
+    
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
 
-  <p><%= simple_format(@song.lyrics) %></p>
+      <% @song.phrases.each do |phrase| %>
+        <span><%= phrase.sentence %></span><br>
+      <% end %>
+
+    </div>
+
+    <div class="col s4">
+      <h4>Reference</h4>
+      <p><%= simple_format(@song.lyrics) %></p>
+    </div>
+  </div>
 
   <ul>
     <li><%= link_to "Edit", edit_song_path(@song) %> </li>
@@ -11,4 +39,6 @@
       <%= button_to 'Delete', song_path(@song), method: :delete %>
       </li>
   </ul>
+
+ 
 </section>
