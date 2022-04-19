@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sentence: MyText
+  translation: MyText
+  level: 1
+  song: one
+
+two:
+  sentence: MyText
+  translation: MyText
+  level: 1
+  song: two

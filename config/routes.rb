@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "songs#index"
-  resources :songs
+  resources :songs do
+    resources :phrases 
+  end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
