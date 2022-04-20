@@ -4,21 +4,8 @@
   <div class="row">
     <div class="col s8">
       <h4>Your Progress</h4>
-      <%= form_with model: [ @song, @song.phrases.build ] do |form| %>
-        <p>
-          <%= form.label :sentence %><br>
-          <%= form.text_field :sentence %>
-        </p>
-    
-        <p>
-          <%= form.label :translation %><br>
-          <%= form.text_field :translation %>
-        </p>
-    
-        <p>
-          <%= form.submit %>
-        </p>
-      <% end %>
+
+      <%= render 'phrases/form' %>
 
       <% @song.phrases.each do |phrase| %>
         <span><%= phrase.sentence %></span><br>
