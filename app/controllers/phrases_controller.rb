@@ -8,6 +8,6 @@ class PhrasesController < ApplicationController
 
   private
     def phrase_params
-      params.require(:phrase).permit(:sentence, :translation)
+      params.require(:phrase).permit(:sentence, :translation, :level)
     end
 end

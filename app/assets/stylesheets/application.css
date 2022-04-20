@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ /*
+ * Temporary overide for Materialize which defaults select boxes to display:none
+ */
+ select {
+   display: block;
+ }
