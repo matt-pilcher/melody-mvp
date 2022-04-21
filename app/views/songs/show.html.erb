@@ -8,7 +8,7 @@
       <%= render 'phrases/form' %>
 
       <% @song.phrases.each do |phrase| %>
-        <span><%= phrase.sentence %></span><br>
+        <span><%= phrase.sentence %></span><%= button_to 'Delete', [phrase.song, phrase], method: :delete %><br>
       <% end %>
 
     </div>

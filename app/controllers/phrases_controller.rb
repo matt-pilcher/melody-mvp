@@ -6,6 +6,19 @@ class PhrasesController < ApplicationController
     redirect_to song_path(@song)
   end
 
+  def edit
+    @song = Song.find(params[:song_id])
+    @phrase = @song.phrases.find(params[:id])
+  end
+
+  def destroy
+    @song = Song.find(params[:song_id])
+    @phrase = @song.phrases.find(params[:id])
+
+    @phrase.destroy
+    redirect_to song_path(@song), status: 303
+  end
+
   private
     def phrase_params
       params.require(:phrase).permit(:sentence, :translation, :level)
