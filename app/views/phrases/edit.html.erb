@@ -1,0 +1,29 @@
+<section class="container">
+  <%= form_with model: [ @song, @phrase ] do |form| %>
+    <div>
+      <%= form.label :sentence %><br>
+      <%= form.text_field :sentence %>
+    </div>
+
+    <div>
+      <%= form.label :translation %><br>
+      <%= form.text_field :translation %>
+    </div>
+
+    <div>
+      <%= form.label :level %><br>
+      <%= form.select :level, 
+          options_for_select(
+            [['Zero Comprehension', 0], 
+            ['I understand one or two words', 25], 
+            ['I understand most words but the meaning/grammar is unclear', 50],
+            ['I understand every word but the meaning/grammar is not exactly clear', 75], 
+            ['I understand everything', 100]], @phrase.level)
+      %>
+    </div>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</section>
