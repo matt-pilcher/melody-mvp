@@ -3,12 +3,18 @@
   <%= render 'embed', song_link: @song_link %>
   <div class="row">
     <div class="col s8">
-      <h4>Your Progress</h4>
+      <% if @song.phrases.count < 1 %>
+        <h4>Let's get started</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <% else %>
+        <h4>Your Progress</h4>  
+      <% end %>
 
       <%= render 'phrases/form' %>
 
       <% @song.phrases.each do |phrase| %>
-        <%# TODO: Check this later. Shouldn't need a nil check here but .each is looping one extra time breaking link_to %>
         <% unless phrase.id.nil? %>
           <span><%= phrase.sentence %></span>
           <%= link_to "Edit", edit_song_phrase_path(phrase.song, phrase.id) %>
