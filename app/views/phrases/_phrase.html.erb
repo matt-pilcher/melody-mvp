@@ -1,0 +1,10 @@
+
+<% @song.phrases.each do |phrase| %>
+  <% unless phrase.id.nil? %>
+    <%= turbo_frame_tag phrase do %>
+      <span><%= phrase.sentence %></span>
+      <%= link_to "Edit", edit_song_phrase_path(phrase.song, phrase.id) %>
+      <%= button_to 'Delete', [phrase.song, phrase], method: :delete %><br>
+    <% end %>
+  <% end %>
+<% end %>
